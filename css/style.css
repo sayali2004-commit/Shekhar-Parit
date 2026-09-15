@@ -10,7 +10,7 @@
 .nav-logo img {  width: 44px;  height: 44px;  border-radius: 50%;  object-fit: cover;  object-position: center 55%;  border: 2px solid var(--rich-gold);  transition: width 0.3s, height 0.3s;  background: #fff;}.header.scrolled .nav-logo img {  width: 38px;  height: 38px;}@media (min-width: 1024px) {  .nav-logo img {    width: 55px;    height: 55px;  }  .header.scrolled .nav-logo img {    width: 42px;    height: 42px;  }}.nav-logo-text {  display: flex;  flex-direction: column;  min-width: 0;}.nav-logo-name {
   font-family: 'Marcellus', serif;
   font-size: 1.15rem;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.02em;
   transition: color 0.3s;
@@ -57,13 +57,15 @@
   }
 
   .header.transparent:not(.scrolled) .nav-logo-name {
-    color: #fff;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5), 0 0 14px rgba(0, 0, 0, 0.3);
+    color: #07152F;
+    font-weight: 700;
+    text-shadow: 0 1px 8px rgba(255, 255, 255, 0.5), 0 0 2px rgba(255, 255, 255, 0.3);
   }
 
   .header.transparent:not(.scrolled) .nav-logo-tagline {
-    color: var(--rich-gold);
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3);
+    color: #c9a84c;
+    font-weight: 700;
+    text-shadow: 0 1px 8px rgba(255, 255, 255, 0.4), 0 0 2px rgba(255, 255, 255, 0.2);
   }
 
   .header.transparent:not(.scrolled) .nav-cta {
@@ -169,6 +171,7 @@
   }
   .header.transparent:not(.scrolled) .nav-logo-name {
     color: #07152F;
+    font-weight: 700;
     text-shadow: 0 1px 6px rgba(255,255,255,0.28);
   }
   .header.transparent:not(.scrolled) .nav-logo-tagline {

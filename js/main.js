@@ -1,16 +1,20 @@
 // ===== PRELOADER =====
-// Never block first paint on slow/mobile networks: hide on DOM ready,
-// re-confirm on full load, and force-hide after 4s no matter what.
+// Hide as soon as the page can be painted, confirm on full load,
+// and force-hide quickly if a slow asset stalls the load event.
 function hidePreloader() {
   const preloader = document.getElementById('preloader');
   if (preloader && !preloader.classList.contains('loaded')) {
     preloader.classList.add('loaded');
-    setTimeout(() => { preloader.style.display = 'none'; }, 700);
+    setTimeout(() => { preloader.style.display = 'none'; }, 650);
   }
 }
-document.addEventListener('DOMContentLoaded', () => setTimeout(hidePreloader, 400));
-window.addEventListener('load', () => setTimeout(hidePreloader, 400));
-setTimeout(hidePreloader, 4000);
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => requestAnimationFrame(hidePreloader), { once: true });
+} else {
+  requestAnimationFrame(hidePreloader);
+}
+window.addEventListener('load', hidePreloader, { once: true });
+setTimeout(hidePreloader, 2500);
 
 // ===== HEADER SCROLL =====
 const header = document.querySelector('.header');

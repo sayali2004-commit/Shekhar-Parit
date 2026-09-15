@@ -47,24 +47,24 @@
 
 /* ===== DESKTOP HERO NAVBAR READABILITY (1024px and above) ===== */
 @media (min-width: 1024px) {
-  .header.transparent {
+  .header.transparent:not(.scrolled) {
     background: linear-gradient(180deg, rgba(10, 10, 26, 0.26) 0%, rgba(10, 10, 26, 0.10) 50%, rgba(10, 10, 26, 0.03) 100%);
   }
 
-  .header.transparent .nav-links a {
+  .header.transparent:not(.scrolled) .nav-links a {
     color: rgba(255, 255, 255, 0.95);
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
   }
 
-  .header.transparent .nav-logo-name {
+  .header.transparent:not(.scrolled) .nav-logo-name {
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
   }
 
-  .header.transparent .nav-logo-tagline {
+  .header.transparent:not(.scrolled) .nav-logo-tagline {
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
   }
 
-  .header.transparent .nav-cta {
+  .header.transparent:not(.scrolled) .nav-cta {
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
   }
 }

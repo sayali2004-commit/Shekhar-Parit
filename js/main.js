@@ -367,16 +367,17 @@ document.querySelectorAll('.project-page-img, .project-card-img').forEach((img) 
 });
 
 // ===== ACTIVITY IMAGE FULLSCREEN =====
-document.querySelectorAll('.activity-card-img').forEach((img) => {
-  img.style.cursor = 'pointer';
-  img.addEventListener('click', (e) => {
+document.querySelectorAll('.activity-card-img').forEach((el) => {
+  if (el.tagName === 'VIDEO') return;
+  el.style.cursor = 'pointer';
+  el.addEventListener('click', (e) => {
     e.stopPropagation();
     galleryImages = [];
     document.querySelectorAll('.activity-card-img').forEach(im => {
-      galleryImages.push(im.src);
+      if (im.tagName !== 'VIDEO') galleryImages.push(im.src);
     });
-    currentGalleryIndex = Math.max(0, galleryImages.indexOf(img.src));
-    openLightbox(img.src);
+    currentGalleryIndex = Math.max(0, galleryImages.indexOf(el.src));
+    openLightbox(el.src);
   });
 });
 

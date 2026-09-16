@@ -408,3 +408,30 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+
+/* ===== VIDEO CARD STYLING ===== */
+.video-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  background: #000;
+}
+.video-frame video {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+.video-frame:hover video {
+  opacity: 0.9;
+}
+@media (max-width: 767px) {
+  .video-frame video {
+    height: 180px;
+  }
+}
+@media (min-width: 1024px) {
+  .video-frame video {
+    height: 320px;
+  }
+}

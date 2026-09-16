@@ -507,3 +507,24 @@
   object-fit: cover;
   display: block;
 }
+
+/* ===== CONTACT PAGE HERO FULL HEIGHT ===== */
+.contact-hero .page-hero {
+  height: auto;
+  min-height: 400px;
+  padding: 100px 0 60px;
+}
+.contact-hero .page-hero-bg img {
+  height: auto;
+  min-height: 400px;
+  object-fit: cover;
+}
+@media (min-width: 1024px) {
+  .contact-hero .page-hero {
+    min-height: 500px;
+    padding: 120px 0 80px;
+  }
+  .contact-hero .page-hero-bg img {
+    min-height: 500px;
+  }
+}

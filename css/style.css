@@ -438,28 +438,26 @@
 
 /* ===== TESTIMONIALS CAROUSEL ===== */
 .testimonials-carousel {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  overflow: hidden;
   padding: 1rem 0 2rem;
-}
-.testimonials-carousel::-webkit-scrollbar {
-  display: none;
 }
 .testimonials-track {
   display: flex;
   gap: 1.5rem;
-  padding: 0 1rem;
   width: max-content;
+  animation: scrollTestimonials 25s linear infinite;
+}
+.testimonials-track:hover {
+  animation-play-state: paused;
+}
+@keyframes scrollTestimonials {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 .testimonials-track .testimonial-card {
   min-width: 350px;
   max-width: 400px;
   flex-shrink: 0;
-  scroll-snap-align: start;
 }
 @media (min-width: 768px) {
   .testimonials-track .testimonial-card {

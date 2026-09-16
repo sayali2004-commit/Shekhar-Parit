@@ -331,13 +331,27 @@ if (mediaTabBtns.length > 0) {
 document.querySelectorAll('.video-frame').forEach(frame => {
   const video = frame.querySelector('video');
   const btn = frame.querySelector('.video-play-btn');
-  if (!video || !btn) return;
-  btn.addEventListener('click', () => {
-    const attempt = video.play();
-    if (attempt) attempt.catch(() => {});
-  });
-  video.addEventListener('play', () => frame.classList.add('playing'));
-  video.addEventListener('pause', () => frame.classList.remove('playing'));
+  if (video) {
+    frame.style.cursor = 'pointer';
+    frame.addEventListener('click', (e) => {
+      if (e.target === video) return;
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  }
+  if (btn && video) {
+    btn.addEventListener('click', () => {
+      const attempt = video.play();
+      if (attempt) attempt.catch(() => {});
+    });
+  }
+  if (video) {
+    video.addEventListener('play', () => frame.classList.add('playing'));
+    video.addEventListener('pause', () => frame.classList.remove('playing'));
+  }
 });
 
 // ===== PROJECT IMAGE FULLSCREEN =====
@@ -345,6 +359,20 @@ document.querySelectorAll('.project-page-img, .project-card-img').forEach((img) 
   img.addEventListener('click', () => {
     galleryImages = [];
     document.querySelectorAll('.project-page-img, .project-card-img').forEach(im => {
+      galleryImages.push(im.src);
+    });
+    currentGalleryIndex = Math.max(0, galleryImages.indexOf(img.src));
+    openLightbox(img.src);
+  });
+});
+
+// ===== ACTIVITY IMAGE FULLSCREEN =====
+document.querySelectorAll('.activity-card-img').forEach((img) => {
+  img.style.cursor = 'pointer';
+  img.addEventListener('click', (e) => {
+    e.stopPropagation();
+    galleryImages = [];
+    document.querySelectorAll('.activity-card-img').forEach(im => {
       galleryImages.push(im.src);
     });
     currentGalleryIndex = Math.max(0, galleryImages.indexOf(img.src));

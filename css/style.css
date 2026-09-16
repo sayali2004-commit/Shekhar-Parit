@@ -507,10 +507,10 @@
 }
 
 /* ===== CONTACT PAGE HERO FULL HEIGHT ===== */
-.contact-hero .page-hero { height: auto; min-height: 500px; padding: 120px 0 80px; }
-.contact-hero .page-hero-bg img { height: auto; min-height: 500px; object-fit: cover; }
+.contact-hero .page-hero { height: auto; min-height: 600px; padding: 140px 0 100px; }
+.contact-hero .page-hero-bg img { height: 100%; min-height: 600px; object-fit: cover; }
 @media (min-width: 1024px) {
-  .contact-hero .page-hero { min-height: 600px; padding: 140px 0 100px; } .contact-hero .page-hero-bg img { min-height: 600px; }
+  .contact-hero .page-hero { min-height: 700px; padding: 160px 0 120px; } .contact-hero .page-hero-bg img { min-height: 700px; }
 }
 
 /* ===== ACTIVITIES PAGE HERO FULL HEIGHT ===== */

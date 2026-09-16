@@ -56,6 +56,18 @@
               <div class="form-group"><label for="message">Your Message</label><textarea id="message" placeholder="Tell us about your project..." required></textarea></div>
               <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send Message</button>
             </form>
+            <script>
+            function handleSubmit(e) {
+              e.preventDefault();
+              const name = document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value;
+              const email = document.getElementById('email').value;
+              const phone = document.getElementById('phone').value;
+              const service = document.getElementById('service').value;
+              const message = document.getElementById('message').value;
+              const text = `Hello, I am ${name}.%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}%0AMessage: ${message}`;
+              window.open('https://wa.me/919021592005?text=' + text, '_blank');
+            }
+            </script>
           </div>
         </div>
         <div class="reveal-right">

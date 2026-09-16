@@ -540,9 +540,9 @@
 }
 
 /* ===== ACTIVITIES PAGE HERO FULL HEIGHT ===== */
-.activities-hero .page-hero { height: 45vh; min-height: 280px; padding: 100px 0 60px; }
+.activities-hero .page-hero { height: 55vh; min-height: 350px; padding: 120px 0 80px; }
 .activities-hero .page-hero-bg img { width: 100%; height: 100%; object-fit: cover; }
 @media (min-width: 1024px) {
-  .activities-hero .page-hero { height: 45vh; min-height: 280px; padding: 100px 0 60px; }
+  .activities-hero .page-hero { height: 55vh; min-height: 350px; padding: 120px 0 80px; }
   .activities-hero .page-hero-bg img { width: 100%; height: 100%; object-fit: cover; }
 }

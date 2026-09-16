@@ -526,3 +526,24 @@
     min-height: 500px;
   }
 }
+
+/* ===== ACTIVITIES PAGE HERO FULL HEIGHT ===== */
+.activities-hero .page-hero {
+  height: auto;
+  min-height: 400px;
+  padding: 100px 0 60px;
+}
+.activities-hero .page-hero-bg img {
+  height: auto;
+  min-height: 400px;
+  object-fit: cover;
+}
+@media (min-width: 1024px) {
+  .activities-hero .page-hero {
+    min-height: 500px;
+    padding: 120px 0 80px;
+  }
+  .activities-hero .page-hero-bg img {
+    min-height: 500px;
+  }
+}

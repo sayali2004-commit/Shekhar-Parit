@@ -421,19 +421,16 @@ if (testimonialsTrack && prevBtn && nextBtn) {
   }
   
   prevBtn.addEventListener('click', () => {
-    if (testimonialIndex > 0) {
-      testimonialIndex--;
-      updateCarousel();
-    }
+    const cardsPerView = getCardsPerView();
+    testimonialIndex = Math.max(0, testimonialIndex - cardsPerView);
+    updateCarousel();
   });
   
   nextBtn.addEventListener('click', () => {
     const cardsPerView = getCardsPerView();
     const maxIndex = Math.max(0, totalCards - cardsPerView);
-    if (testimonialIndex < maxIndex) {
-      testimonialIndex++;
-      updateCarousel();
-    }
+    testimonialIndex = Math.min(maxIndex, testimonialIndex + cardsPerView);
+    updateCarousel();
   });
   
   window.addEventListener('resize', updateCarousel);

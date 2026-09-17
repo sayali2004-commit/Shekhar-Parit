@@ -462,11 +462,11 @@
 }
 @media (max-width: 767px) {
   .testimonials-track .testimonial-card {
-    width: 85%;
+    width: 100%;
     padding: 2.5rem 1.5rem;
   }
   .testimonials-carousel {
-    padding: 0.5rem 1rem 1rem;
+    padding: 0.5rem 0 1rem;
   }
 }
 .testimonial-nav {

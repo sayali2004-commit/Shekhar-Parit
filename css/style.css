@@ -574,13 +574,17 @@
   left: 50%;
   transform: translateX(-50%);
   width: 85%;
-  max-width: 190px;
+  max-width: 185px;
   background: #fff;
   border-radius: var(--radius-md);
-  box-shadow: 0 4px 20px rgba(10, 10, 26, 0.06);
+  box-shadow: 0 3px 16px rgba(10, 10, 26, 0.06);
   border: 1px solid rgba(201, 168, 76, 0.15);
-  padding: 1.2rem 0.9rem;
+  padding: 1.1rem 0.85rem;
   text-align: center;
+}
+.tl-zg-highlight {
+  border: 2px solid var(--rich-gold);
+  box-shadow: 0 3px 16px rgba(201, 168, 76, 0.12);
 }
 .tl-zg-box p {
   font-size: 0.72rem;

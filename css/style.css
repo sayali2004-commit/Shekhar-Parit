@@ -523,7 +523,7 @@
   align-items: stretch;
   position: relative;
   width: 100%;
-  height: 440px;
+  height: 380px;
   padding: 0;
 }
 .timeline-horizontal .tl-card {
@@ -537,7 +537,7 @@
   transform: translateX(-50%);
   width: 94%;
   max-width: 155px;
-  padding: 1rem 0.7rem;
+  padding: 0.9rem 0.7rem;
   text-align: center;
   background: #fff;
   border-radius: var(--radius-md);
@@ -545,14 +545,14 @@
   border: 1px solid rgba(201, 168, 76, 0.15);
 }
 .timeline-horizontal .tl-card .tl-card-box p {
-  font-size: 0.65rem;
-  line-height: 1.45;
-  margin-bottom: 0.4rem;
+  font-size: 0.62rem;
+  line-height: 1.4;
+  margin-bottom: 0.35rem;
   color: var(--text-secondary);
 }
 .timeline-horizontal .tl-card .tl-card-label {
   font-family: var(--font-sans);
-  font-size: 0.5rem;
+  font-size: 0.48rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -588,22 +588,22 @@
   z-index: 2;
 }
 
-/* TOP cards: box at top, arrow goes down to badge at center */
+/* TOP cards: box right above the badge, tiny arrow */
 .timeline-horizontal .tl-card.top .tl-card-box {
-  top: 0;
+  bottom: calc(50% + 24px);
 }
 .timeline-horizontal .tl-card.top .tl-card-arrow {
-  top: 108px;
-  bottom: calc(50% + 23px);
+  height: 8px;
+  bottom: calc(50% + 16px);
 }
 
-/* BOTTOM cards: badge at center, arrow goes down to box at bottom */
+/* BOTTOM cards: box right below the badge, tiny arrow */
 .timeline-horizontal .tl-card.bottom .tl-card-box {
-  bottom: 0;
+  top: calc(50% + 24px);
 }
 .timeline-horizontal .tl-card.bottom .tl-card-arrow {
-  top: calc(50% + 23px);
-  bottom: 108px;
+  height: 8px;
+  top: calc(50% + 16px);
 }
 
 /* Track dashed line at center */
@@ -621,34 +621,25 @@
 /* Tablet */
 @media (max-width: 1023px) {
   .timeline-horizontal .tl-items {
-    height: 380px;
+    height: 350px;
   }
   .timeline-horizontal .tl-card {
-    flex: 0 0 calc((100% - 30px) / 6);
+    flex: 0 0 calc((100% - 24px) / 6);
   }
   .timeline-horizontal .tl-card .tl-card-box {
-    max-width: 130px;
-    padding: 0.75rem 0.5rem;
+    max-width: 125px;
+    padding: 0.7rem 0.45rem;
   }
   .timeline-horizontal .tl-card .tl-card-box p {
-    font-size: 0.55rem;
-    line-height: 1.4;
+    font-size: 0.52rem;
   }
   .timeline-horizontal .tl-card .tl-card-label {
-    font-size: 0.42rem;
+    font-size: 0.4rem;
   }
   .timeline-horizontal .tl-card .tl-year-badge {
     width: 38px;
     height: 38px;
     font-size: 0.65rem;
-  }
-  .timeline-horizontal .tl-card.top .tl-card-arrow {
-    top: 90px;
-    bottom: calc(50% + 19px);
-  }
-  .timeline-horizontal .tl-card.bottom .tl-card-arrow {
-    top: calc(50% + 19px);
-    bottom: 90px;
   }
 }
 
@@ -663,7 +654,7 @@
   }
   .timeline-horizontal .tl-items {
     min-width: 720px;
-    height: 440px;
+    height: 380px;
   }
 }
 

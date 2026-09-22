@@ -526,10 +526,10 @@
   align-items: flex-start;
   position: relative;
   width: 100%;
-  padding: 0 10px;
+  padding: 0 30px;
 }
 .timeline-horizontal .tl-card {
-  flex: 0 0 15%;
+  flex: 0 0 15.5%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -537,33 +537,32 @@
 }
 .timeline-horizontal .tl-card .tl-card-box {
   width: 100%;
-  max-width: 160px;
-  padding: 0.8rem 0.6rem;
+  max-width: 150px;
+  padding: 1rem 0.75rem;
   text-align: center;
   background: #fff;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
   border: 1px solid rgba(201, 168, 76, 0.15);
-  font-size: 0.72rem;
-  line-height: 1.5;
 }
 .timeline-horizontal .tl-card .tl-card-box p {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   line-height: 1.5;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
   color: var(--text-secondary);
 }
 .timeline-horizontal .tl-card .tl-card-label {
   font-family: var(--font-sans);
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--rich-gold);
+  display: block;
 }
 .timeline-horizontal .tl-card .tl-year-badge {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: var(--rich-gold);
   color: #fff;
@@ -571,17 +570,19 @@
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 400;
   border: 3px solid #fff;
   box-shadow: 0 2px 8px rgba(201, 168, 76, 0.3);
   z-index: 2;
   position: relative;
+  flex-shrink: 0;
 }
 .timeline-horizontal .tl-card .tl-card-arrow {
-  width: 1px;
-  height: 16px;
+  width: 2px;
+  height: 18px;
   background: var(--rich-gold);
+  flex-shrink: 0;
 }
 .timeline-horizontal .tl-card.top {
   padding-top: 0;
@@ -605,40 +606,40 @@
 .timeline-horizontal .tl-track-line {
   position: absolute;
   top: 50%;
-  left: 0;
-  right: 0;
+  left: 30px;
+  right: 30px;
   height: 3px;
   border-top: 3px dashed var(--rich-gold);
   z-index: 1;
 }
 @media (max-width: 1023px) {
   .timeline-horizontal .tl-card {
-    flex: 0 0 18%;
+    flex: 0 0 17%;
   }
   .timeline-horizontal .tl-card .tl-card-box {
-    max-width: 140px;
-    padding: 0.6rem 0.5rem;
-    font-size: 0.65rem;
+    max-width: 130px;
+    padding: 0.75rem 0.5rem;
   }
   .timeline-horizontal .tl-card .tl-card-box p {
-    font-size: 0.65rem;
+    font-size: 0.62rem;
   }
   .timeline-horizontal .tl-card .tl-card-label {
-    font-size: 0.55rem;
+    font-size: 0.5rem;
   }
   .timeline-horizontal .tl-card .tl-year-badge {
-    width: 38px;
-    height: 38px;
-    font-size: 0.7rem;
+    width: 40px;
+    height: 40px;
+    font-size: 0.72rem;
   }
   .timeline-horizontal .tl-card .tl-card-arrow {
-    height: 12px;
+    height: 14px;
   }
 }
 @media (max-width: 767px) {
   .timeline-horizontal {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
   }
   .timeline-horizontal .tl-items {
     min-width: 700px;

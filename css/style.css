@@ -549,9 +549,8 @@
 /* Badge on the line */
 .tl-zg-badge {
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -566,6 +565,16 @@
   border: 4px solid #fff;
   box-shadow: 0 0 0 2px var(--rich-gold), 0 3px 10px rgba(201, 168, 76, 0.3);
   z-index: 3;
+}
+
+/* TOP: badge above the line */
+.tl-zg-item.tl-zg-top .tl-zg-badge {
+  bottom: calc(50% + 8px);
+}
+
+/* BOTTOM: badge below the line */
+.tl-zg-item.tl-zg-bottom .tl-zg-badge {
+  top: calc(50% + 8px);
 }
 
 /* Card box */

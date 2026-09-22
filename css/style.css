@@ -512,6 +512,20 @@
   right: 0;
 }
 
+/* ===== TIMELINE OVERRIDE (fit 6 cards) ===== */
+.timeline-horizontal .tl-track {
+  min-width: 100%;
+}
+.timeline-horizontal .tl-items {
+  display: flex;
+  gap: 2rem;
+  min-width: max-content;
+}
+.timeline-horizontal .tl-items .tl-card {
+  flex: 0 0 calc((100% - 10rem) / 6);
+  min-width: 180px;
+}
+
 /* ===== SERVICE DETAIL IMAGES ===== */
 .service-detail-img {
   width: 100%;

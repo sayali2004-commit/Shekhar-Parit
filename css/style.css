@@ -523,10 +523,8 @@
   grid-template-columns: repeat(6, 1fr);
   position: relative;
   height: 420px;
-  margin: 0 10px;
+  margin: 0;
 }
-
-/* Dashed line at center */
 .tl-zg-dash {
   position: absolute;
   top: 50%;
@@ -536,8 +534,6 @@
   transform: translateY(-50%);
   z-index: 0;
 }
-
-/* Each column */
 .tl-zg-item {
   display: flex;
   flex-direction: column;
@@ -546,14 +542,14 @@
   position: relative;
 }
 
-/* Badge: centered on line */
+/* Badge: centered on dashed line */
 .tl-zg-badge {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 52px;
-  height: 52px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: var(--rich-gold);
   color: #fff;
@@ -561,36 +557,36 @@
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 400;
   border: 5px solid #fff;
-  box-shadow: 0 3px 14px rgba(201, 168, 76, 0.4);
+  box-shadow: 0 0 0 2px var(--rich-gold), 0 3px 12px rgba(201, 168, 76, 0.35);
   z-index: 3;
 }
 
-/* Card box shared styles */
+/* Card box */
 .tl-zg-box {
-  width: 92%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 88%;
   max-width: 200px;
   background: #fff;
   border-radius: var(--radius-lg);
   box-shadow: 0 6px 28px rgba(10, 10, 26, 0.08);
   border: 1px solid rgba(201, 168, 76, 0.18);
-  padding: 1.4rem 1.1rem;
+  padding: 1.3rem 1rem;
   text-align: center;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
 }
 .tl-zg-box p {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   line-height: 1.6;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
   color: var(--text-secondary);
 }
 .tl-zg-label {
   font-family: var(--font-sans);
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -598,12 +594,12 @@
   display: block;
 }
 
-/* TOP: card at top, badge below */
+/* TOP: card at top, badge at center — card sits above badge with space */
 .tl-zg-item.tl-zg-top .tl-zg-box {
   top: 0;
 }
 
-/* BOTTOM: badge above, card at bottom */
+/* BOTTOM: badge at center, card at bottom — card sits below badge with space */
 .tl-zg-item.tl-zg-bottom .tl-zg-box {
   bottom: 0;
 }
@@ -615,7 +611,7 @@
   }
   .tl-zg-box {
     max-width: 165px;
-    padding: 1rem 0.7rem;
+    padding: 1rem 0.65rem;
   }
   .tl-zg-box p {
     font-size: 0.65rem;

@@ -703,6 +703,48 @@
   }
 }
 
+/* ===== PROJECTS / SERVICES HEADER TEXT like filter pill reference ===== */
+.projects-page + .filter-buttons,
+.inner-section .section-header .section-subtitle,
+.page-hero-content .section-subtitle {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.filter-buttons .filter-btn {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--deep-navy);
+  padding: 14px 32px;
+}
+.filter-buttons .filter-btn.active {
+  color: #0a0a1a;
+}
+.section-header .section-title,
+.service-detail-content h3,
+.project-page-info h3,
+.project-card-info h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+.service-detail-content .section-subtitle {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.service-detail-content h3 {
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  margin-top: 0.2rem;
+}
+
 /* ===== GALLERY FILTER PANELS ===== */
 .gallery-panel[hidden] {
   display: none !important;

@@ -381,6 +381,15 @@ document.querySelectorAll('.activity-card-img').forEach((el) => {
   });
 });
 
+// ===== MILESTONE CARD SELECT (click, not hover) =====
+const milestoneCards = document.querySelectorAll('.milestone-card');
+milestoneCards.forEach(card => {
+  card.addEventListener('click', () => {
+    milestoneCards.forEach(c => c.classList.remove('is-selected'));
+    card.classList.add('is-selected');
+  });
+});
+
 // ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {

@@ -390,6 +390,29 @@ milestoneCards.forEach(card => {
   });
 });
 
+// ===== GALLERY PANELS (Projects / Site Photos / Site Videos) =====
+const galleryFilterBtns = document.querySelectorAll('.filter-btn[data-gallery]');
+const galleryPanels = document.querySelectorAll('.gallery-panel');
+if (galleryFilterBtns.length && galleryPanels.length) {
+  galleryFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-gallery');
+      galleryFilterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      galleryPanels.forEach(panel => {
+        const show = panel.getAttribute('data-panel') === target;
+        if (show) {
+          panel.hidden = false;
+          panel.querySelectorAll('.reveal').forEach(el => el.classList.add('revealed'));
+        } else {
+          panel.hidden = true;
+          panel.querySelectorAll('video').forEach(v => { try { v.pause(); } catch (e) {} });
+        }
+      });
+    });
+  });
+}
+
 // ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {

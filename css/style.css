@@ -676,6 +676,11 @@
   }
 }
 
+/* ===== GALLERY FILTER PANELS ===== */
+.gallery-panel[hidden] {
+  display: none !important;
+}
+
 /* ===== SERVICE DETAIL IMAGES ===== */
 .service-detail-img {
   width: 100%;

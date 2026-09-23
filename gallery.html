@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Marcellus:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap">
-  <link rel="stylesheet" href="css/style.css?v=68">
+  <link rel="stylesheet" href="css/style.css?v=77">
   <link rel="prefetch" href="contact.html" as="document">
   <link rel="icon" href="data:;base64,=">
 </head>
@@ -43,7 +43,12 @@
         <h2 class="section-title">Project Gallery</h2>
         <p>Click on any image to view it in full size.</p>
       </div>
-      <div class="gallery-masonry">
+            <div class="filter-buttons reveal">
+        <button class="filter-btn active" data-gallery="projects">Projects</button>
+        <button class="filter-btn" data-gallery="site-photos">Site Photos</button>
+        <button class="filter-btn" data-gallery="site-videos">Site Videos</button>
+      </div>
+      <div class="gallery-panel" data-panel="projects"><div class="gallery-masonry">
         <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/completed/Nayansheel.jpeg" alt="Nayansheel"><div class="gallery-item-overlay"><span>Nayansheel</span></div></div>
         <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/completed/titanimg.png" alt="Titan Apartment"><div class="gallery-item-overlay"><span>Titan Apartment</span></div></div>
         <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/interior/IMG_20241008_095331.jpg" alt="Interior"><div class="gallery-item-overlay"><span>Premium Interior</span></div></div>
@@ -83,6 +88,52 @@
         <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/ongoing/Chivate Site.jpeg" alt="Chivate"><div class="gallery-item-overlay"><span>Chivate Site</span></div></div>
         <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/completed/Land Devlopment Shrinivas Patil.jpeg" alt="Land Development"><div class="gallery-item-overlay"><span>Land Development</span></div></div>
         <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/interior/IMG_20241008_100802.jpg" alt="Interior"><div class="gallery-item-overlay"><span>Premium Interior</span></div></div>
+      </div>
+          </div>
+      <div class="gallery-panel" data-panel="site-photos" hidden>
+        <div class="gallery-masonry">        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-01.jpg" alt="Site Photo 01"><div class="gallery-item-overlay"><span>Site Photo 01</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-02.jpg" alt="Site Photo 02"><div class="gallery-item-overlay"><span>Site Photo 02</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-03.jpg" alt="Site Photo 03"><div class="gallery-item-overlay"><span>Site Photo 03</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-04.jpg" alt="Site Photo 04"><div class="gallery-item-overlay"><span>Site Photo 04</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-05.jpg" alt="Site Photo 05"><div class="gallery-item-overlay"><span>Site Photo 05</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-06.jpg" alt="Site Photo 06"><div class="gallery-item-overlay"><span>Site Photo 06</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-07.jpg" alt="Site Photo 07"><div class="gallery-item-overlay"><span>Site Photo 07</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-08.jpg" alt="Site Photo 08"><div class="gallery-item-overlay"><span>Site Photo 08</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-09.jpg" alt="Site Photo 09"><div class="gallery-item-overlay"><span>Site Photo 09</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-10.jpg" alt="Site Photo 10"><div class="gallery-item-overlay"><span>Site Photo 10</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-11.jpg" alt="Site Photo 11"><div class="gallery-item-overlay"><span>Site Photo 11</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-12.jpg" alt="Site Photo 12"><div class="gallery-item-overlay"><span>Site Photo 12</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-13.jpg" alt="Site Photo 13"><div class="gallery-item-overlay"><span>Site Photo 13</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-14.jpg" alt="Site Photo 14"><div class="gallery-item-overlay"><span>Site Photo 14</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-15.jpg" alt="Site Photo 15"><div class="gallery-item-overlay"><span>Site Photo 15</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-16.jpg" alt="Site Photo 16"><div class="gallery-item-overlay"><span>Site Photo 16</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-17.jpg" alt="Site Photo 17"><div class="gallery-item-overlay"><span>Site Photo 17</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-18.jpg" alt="Site Photo 18"><div class="gallery-item-overlay"><span>Site Photo 18</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-19.jpg" alt="Site Photo 19"><div class="gallery-item-overlay"><span>Site Photo 19</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-20.jpg" alt="Site Photo 20"><div class="gallery-item-overlay"><span>Site Photo 20</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-21.jpg" alt="Site Photo 21"><div class="gallery-item-overlay"><span>Site Photo 21</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-22.jpg" alt="Site Photo 22"><div class="gallery-item-overlay"><span>Site Photo 22</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-23.jpg" alt="Site Photo 23"><div class="gallery-item-overlay"><span>Site Photo 23</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-24.jpg" alt="Site Photo 24"><div class="gallery-item-overlay"><span>Site Photo 24</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-25.jpg" alt="Site Photo 25"><div class="gallery-item-overlay"><span>Site Photo 25</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-26.jpg" alt="Site Photo 26"><div class="gallery-item-overlay"><span>Site Photo 26</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-27.jpg" alt="Site Photo 27"><div class="gallery-item-overlay"><span>Site Photo 27</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-28.jpg" alt="Site Photo 28"><div class="gallery-item-overlay"><span>Site Photo 28</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-29.jpg" alt="Site Photo 29"><div class="gallery-item-overlay"><span>Site Photo 29</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-30.jpg" alt="Site Photo 30"><div class="gallery-item-overlay"><span>Site Photo 30</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-31.jpg" alt="Site Photo 31"><div class="gallery-item-overlay"><span>Site Photo 31</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-32.jpg" alt="Site Photo 32"><div class="gallery-item-overlay"><span>Site Photo 32</span></div></div>
+        <div class="gallery-item reveal"><img loading="lazy" decoding="async" src="images/site-details/site-33.jpg" alt="Site Photo 33"><div class="gallery-item-overlay"><span>Site Photo 33</span></div></div>        </div>
+      </div>
+      <div class="gallery-panel" data-panel="site-videos" hidden>
+        <div class="activities-grid">        <div class="activity-card reveal"><div class="video-frame"><video class="activity-card-img" src="video/site-details/site-video-01.mp4" preload="metadata" controls playsinline></video></div><div class="activity-card-info"><h3>Site Video 01</h3></div></div>
+        <div class="activity-card reveal"><div class="video-frame"><video class="activity-card-img" src="video/site-details/site-video-02.mp4" preload="metadata" controls playsinline></video></div><div class="activity-card-info"><h3>Site Video 02</h3></div></div>
+        <div class="activity-card reveal"><div class="video-frame"><video class="activity-card-img" src="video/site-details/site-video-03.mp4" preload="metadata" controls playsinline></video></div><div class="activity-card-info"><h3>Site Video 03</h3></div></div>
+        <div class="activity-card reveal"><div class="video-frame"><video class="activity-card-img" src="video/site-details/site-video-04.mp4" preload="metadata" controls playsinline></video></div><div class="activity-card-info"><h3>Site Video 04</h3></div></div>
+        <div class="activity-card reveal"><div class="video-frame"><video class="activity-card-img" src="video/site-details/site-video-05.mp4" preload="metadata" controls playsinline></video></div><div class="activity-card-info"><h3>Site Video 05</h3></div></div>
+        <div class="activity-card reveal"><div class="video-frame"><video class="activity-card-img" src="video/site-details/site-video-06.mp4" preload="metadata" controls playsinline></video></div><div class="activity-card-info"><h3>Site Video 06</h3></div></div>
+        <div class="activity-card reveal"><div class="video-frame"><video class="activity-card-img" src="video/site-details/site-video-07.mp4" preload="metadata" controls playsinline></video></div><div class="activity-card-info"><h3>Site Video 07</h3></div></div>
+        <div class="activity-card reveal"><div class="video-frame"><video class="activity-card-img" src="video/site-details/site-video-08.mp4" preload="metadata" controls playsinline></video></div><div class="activity-card-info"><h3>Site Video 08</h3></div></div>        </div>
       </div>
     </div>
   </section>
@@ -163,6 +214,6 @@
   </footer>
 
   <div class="lightbox"><button class="lightbox-close" aria-label="Close">&times;</button><button class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button><img src="" alt="Gallery Image"><button class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button></div>
-  <script src="js/main.js?v=5" defer></script>
+  <script src="js/main.js?v=7" defer></script>
 </body>
 </html>

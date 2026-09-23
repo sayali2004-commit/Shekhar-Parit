@@ -676,6 +676,33 @@
   }
 }
 
+/* ===== HEADER LOGO TEXT: SHARADA caps + larger, tagline smaller ===== */
+.nav-logo-name {
+  text-transform: uppercase;
+  font-size: 1.45rem !important;
+  letter-spacing: 0.06em;
+}
+.nav-logo-tagline {
+  font-size: 0.72rem !important;
+  letter-spacing: 0.16em;
+}
+@media (min-width: 1024px) {
+  .nav-logo-name {
+    font-size: 1.65rem !important;
+  }
+  .nav-logo-tagline {
+    font-size: 0.78rem !important;
+  }
+}
+@media (max-width: 767px) {
+  .nav-logo-name {
+    font-size: 1.2rem !important;
+  }
+  .nav-logo-tagline {
+    font-size: 0.62rem !important;
+  }
+}
+
 /* ===== GALLERY FILTER PANELS ===== */
 .gallery-panel[hidden] {
   display: none !important;

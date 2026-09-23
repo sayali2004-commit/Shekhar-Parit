@@ -372,16 +372,6 @@
   margin: 0;
   color: var(--deep-navy);
 }
-.activity-card-num {
-  display: inline-block;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--rich-gold);
-  margin-bottom: 0.3rem;
-}
 @media (max-width: 767px) {
   .activities-grid {
     grid-template-columns: repeat(2, 1fr);

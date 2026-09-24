@@ -360,6 +360,12 @@
 .activity-card:hover .activity-card-img {
   transform: scale(1.08);
 }
+.activity-card-media .activity-card-img {
+  display: none;
+}
+.activity-card-media .activity-card-img.is-active {
+  display: block;
+}
 .activity-card-info {
   padding: 1rem;
   text-align: center;
@@ -380,6 +386,9 @@
   .activity-card-img {
     height: 180px;
   }
+  .activity-card-media .activity-card-img {
+    height: 180px;
+  }
   .activity-card-info h3 {
     font-size: 0.9rem;
   }
@@ -390,6 +399,9 @@
     gap: 1.25rem;
   }
   .activity-card-img {
+    height: 320px;
+  }
+  .activity-card-media .activity-card-img {
     height: 320px;
   }
 }
@@ -742,30 +754,203 @@
   }
 }
 
-/* ===== HEADER LOGO TEXT: SHARADA caps + larger, tagline smaller ===== */
+/* ===== HEADER LOGO TEXT: Concept 4 — SHARADA spaced caps + ruled tagline ===== */
 .nav-logo-name {
   text-transform: uppercase;
   font-size: 1.45rem !important;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.32em;
+  font-weight: 500;
+  line-height: 1.15;
+  margin-right: -0.32em;
 }
 .nav-logo-tagline {
-  font-size: 0.72rem !important;
-  letter-spacing: 0.16em;
+  font-size: 0.68rem !important;
+  letter-spacing: 0.18em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: 100%;
+  white-space: nowrap;
+}
+.nav-logo-tagline::before,
+.nav-logo-tagline::after {
+  content: '';
+  flex: 1 1 auto;
+  height: 1px;
+  min-width: 14px;
+  max-width: 42px;
+  background: linear-gradient(90deg, transparent, var(--rich-gold));
+}
+.nav-logo-tagline::after {
+  background: linear-gradient(90deg, var(--rich-gold), transparent);
 }
 @media (min-width: 1024px) {
   .nav-logo-name {
-    font-size: 1.65rem !important;
+    font-size: 1.7rem !important;
+    letter-spacing: 0.38em;
+    margin-right: -0.38em;
   }
   .nav-logo-tagline {
-    font-size: 0.78rem !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.2em;
+    gap: 0.65rem;
+  }
+  .nav-logo-tagline::before,
+  .nav-logo-tagline::after {
+    max-width: 56px;
   }
 }
 @media (max-width: 767px) {
   .nav-logo-name {
-    font-size: 1.2rem !important;
+    font-size: 1.05rem !important;
+    letter-spacing: 0.22em;
+    margin-right: -0.22em;
   }
   .nav-logo-tagline {
-    font-size: 0.62rem !important;
+    font-size: 0.55rem !important;
+    letter-spacing: 0.12em;
+    gap: 0.4rem;
+  }
+  .nav-logo-tagline::before,
+  .nav-logo-tagline::after {
+    min-width: 8px;
+    max-width: 22px;
+  }
+}
+
+/* ===== ACTIVITY CARD IMAGE CAROUSEL ===== */
+.activity-card-media {
+  position: relative;
+  overflow: hidden;
+  background: #0f0f23;
+}
+.activity-card-media .activity-card-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: none;
+  transition: opacity 0.35s ease, transform 0.45s ease;
+}
+.activity-card-media .activity-card-img.is-active {
+  display: block;
+  animation: activityFadeIn 0.4s ease;
+}
+@keyframes activityFadeIn {
+  from { opacity: 0.35; transform: scale(1.03); }
+  to { opacity: 1; transform: scale(1); }
+}
+.activity-card:hover .activity-card-media .activity-card-img.is-active {
+  transform: scale(1.04);
+}
+.activity-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.75);
+  background: rgba(10, 10, 26, 0.55);
+  color: var(--gold-light);
+  font-size: 1.35rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s, background 0.25s, transform 0.25s;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+.activity-card:hover .activity-nav,
+.activity-card:focus-within .activity-nav {
+  opacity: 1;
+  pointer-events: auto;
+}
+.activity-nav:hover {
+  background: var(--rich-gold);
+  color: #0a0a1a;
+  transform: translateY(-50%) scale(1.06);
+}
+.activity-prev { left: 8px; }
+.activity-next { right: 8px; }
+.activity-counter {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(10, 10, 26, 0.62);
+  border: 1px solid rgba(201, 168, 76, 0.55);
+  color: var(--gold-light);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.activity-card:hover .activity-counter,
+.activity-card:focus-within .activity-counter,
+.activity-card[data-carousel]:hover .activity-counter {
+  opacity: 1;
+}
+.activity-card:not([data-carousel]) .activity-counter,
+.activity-card:not([data-carousel]) .activity-nav {
+  display: none;
+}
+.activity-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.activity-card:hover .activity-dots,
+.activity-card:focus-within .activity-dots {
+  opacity: 1;
+}
+.activity-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1px solid rgba(223, 197, 116, 0.9);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.activity-dot.is-active {
+  background: var(--rich-gold);
+  transform: scale(1.2);
+}
+@media (max-width: 767px) {
+  .activity-nav {
+    opacity: 1;
+    pointer-events: auto;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+  .activity-counter,
+  .activity-dots {
+    opacity: 1;
+  }
+  .activity-card-media .activity-card-img {
+    height: 180px;
+  }
+}
+@media (min-width: 1024px) {
+  .activity-card-media .activity-card-img {
+    height: 320px;
   }
 }
 

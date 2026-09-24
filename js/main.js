@@ -199,6 +199,56 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 counters.forEach(c => counterObserver.observe(c));
 
+// ===== ACTIVITY CARD IMAGE CAROUSELS =====
+document.querySelectorAll('[data-carousel]').forEach(card => {
+  const slides = Array.from(card.querySelectorAll('.activity-card-img'));
+  const prevBtn = card.querySelector('.activity-prev');
+  const nextBtn = card.querySelector('.activity-next');
+  const counter = card.querySelector('.activity-counter');
+  const dotsWrap = card.querySelector('.activity-dots');
+  if (slides.length < 2) {
+    if (prevBtn) prevBtn.remove();
+    if (nextBtn) nextBtn.remove();
+    if (counter) counter.remove();
+    if (dotsWrap) dotsWrap.remove();
+    return;
+  }
+  let index = slides.findIndex(s => s.classList.contains('is-active'));
+  if (index < 0) index = 0;
+
+  const dots = slides.map((_, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'activity-dot' + (i === index ? ' is-active' : '');
+    dot.setAttribute('aria-label', 'Show image ' + (i + 1));
+    dot.addEventListener('click', (e) => {
+      e.stopPropagation();
+      go(i);
+    });
+    if (dotsWrap) dotsWrap.appendChild(dot);
+    return dot;
+  });
+
+  function go(next) {
+    const total = slides.length;
+    index = ((next % total) + total) % total;
+    slides.forEach((img, i) => img.classList.toggle('is-active', i === index));
+    dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
+    if (counter) counter.textContent = (index + 1) + ' / ' + total;
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    go(index - 1);
+  });
+  if (nextBtn) nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    go(index + 1);
+  });
+});
+
 // ===== PROJECT FILTER =====
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card, .project-page-card');

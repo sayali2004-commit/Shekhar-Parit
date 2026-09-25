@@ -762,12 +762,14 @@
   font-weight: 500;
   line-height: 1.15;
   margin-right: -0.32em;
+  text-align: center;
 }
 .nav-logo-tagline {
   font-size: 0.68rem !important;
   letter-spacing: 0.18em;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.55rem;
   width: 100%;
   white-space: nowrap;

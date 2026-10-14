@@ -1210,3 +1210,33 @@
   min-height: 100svh;
   border-radius: 0;
 }
+
+/* ===== HERO BELOW NAVBAR (desktop): no overlap, full image visible ===== */
+/* Root cause of cut-off image: .header is position:fixed and overlays the
+   top of .hero-slider (100svh from viewport top), hiding ~86px of the
+   photo. On desktop the navbar is solid white, so the hero is pushed
+   below it and sized to the remaining viewport height. The house facade,
+   roof, ground floor, and landscaping all stay visible — no cropping
+   (object-fit: contain preserved). Mobile keeps the transparent
+   navbar-over-hero design. */
+@media (min-width: 1024px) {
+  .hero-slider {
+    margin-top: var(--header-height);
+    height: calc(100vh - var(--header-height));
+    height: calc(100svh - var(--header-height));
+    min-height: calc(700px - var(--header-height));
+  }
+  @media (min-width: 1920px) {
+    .hero-slider {
+      min-height: calc(760px - var(--header-height));
+    }
+  }
+}
+
+/* Mobile hero: keep transparent navbar overlay; position the image so
+   the building's key parts (facade + entrance) stay in view. */
+@media (max-width: 767px) {
+  .hero-slide-bg {
+    object-position: center 42% !important;
+  }
+}

@@ -100,10 +100,11 @@ if (hamburger && mobileMenu) {
 }
 
 // ===== HERO CINEMATIC SLIDER =====
-// Device-specific image slideshow (video removed): PC/tablet rotate the
-// landscape set, phones rotate the portrait set. ~5s hold each. Images
-// use object-fit: contain — never cropped, stretched, or zoomed.
-const heroMobileMq = window.matchMedia('(max-width: 767px)');
+// Screen-aware image slideshow (video removed): phones and portrait
+// tablets rotate the portrait set (full image fills the screen);
+// landscape tablets and desktops rotate the landscape set. ~5s hold
+// each. Images use object-fit: contain — never cropped or stretched.
+const heroPortraitMq = window.matchMedia('(max-width: 767px), (min-width: 768px) and (max-width: 1023px) and (orientation: portrait)');
 let heroSlides = [];
 let heroCurrent = 0;
 let heroTimer = null;
@@ -112,7 +113,7 @@ const HERO_EXIT_MS = 1950;
 
 function heroCollect() {
   heroSlides = Array.from(document.querySelectorAll(
-    heroMobileMq.matches ? '.hero-slide-mobile' : '.hero-slide-desktop'
+    heroPortraitMq.matches ? '.hero-slide-mobile' : '.hero-slide-desktop'
   ));
 }
 
@@ -145,8 +146,8 @@ heroCollect();
 if (heroSlides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   heroStart();
   const onBreakpointChange = () => { heroReset(); heroStart(); };
-  if (heroMobileMq.addEventListener) heroMobileMq.addEventListener('change', onBreakpointChange);
-  else if (heroMobileMq.addListener) heroMobileMq.addListener(onBreakpointChange);
+  if (heroPortraitMq.addEventListener) heroPortraitMq.addEventListener('change', onBreakpointChange);
+  else if (heroPortraitMq.addListener) heroPortraitMq.addListener(onBreakpointChange);
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       if (heroTimer) clearInterval(heroTimer);

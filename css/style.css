@@ -1118,13 +1118,16 @@
 .hero-slide {
   background: #0a0a1a;
 }
-/* Device-specific slideshows: PC shows landscape set, phones show portrait set */
-@media (min-width: 768px) {
+/* Device-specific slideshows:
+   - Phones (<=767px) and portrait tablets (768-1023px upright) show the
+     portrait set — full image fills the screen.
+   - Landscape tablets (>=768px sideways) and desktops show the landscape set. */
+@media (min-width: 1024px), (min-width: 768px) and (orientation: landscape) {
   .hero-slide-mobile {
     display: none !important;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 767px), (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
   .hero-slide-desktop {
     display: none !important;
   }

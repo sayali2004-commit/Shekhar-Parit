@@ -100,14 +100,28 @@ if (hamburger && mobileMenu) {
 }
 
 // ===== HERO CINEMATIC SLIDER =====
-// Image slideshow (video removed): slow horizontal slide transitions
-// (~5s hold each) so every full house photo stays readable. Images use
-// object-fit: contain — never cropped, stretched, or zoomed.
-const heroSlides = document.querySelectorAll('.hero-slide');
+// Device-specific image slideshow (video removed): PC/tablet rotate the
+// landscape set, phones rotate the portrait set. ~5s hold each. Images
+// use object-fit: contain — never cropped, stretched, or zoomed.
+const heroMobileMq = window.matchMedia('(max-width: 767px)');
+let heroSlides = [];
 let heroCurrent = 0;
 let heroTimer = null;
 const HERO_HOLD_MS = 5000;
 const HERO_EXIT_MS = 1950;
+
+function heroCollect() {
+  heroSlides = Array.from(document.querySelectorAll(
+    heroMobileMq.matches ? '.hero-slide-mobile' : '.hero-slide-desktop'
+  ));
+}
+
+function heroReset() {
+  document.querySelectorAll('.hero-slide').forEach(s => s.classList.remove('active', 'exit'));
+  heroCollect();
+  heroCurrent = 0;
+  if (heroSlides[0]) heroSlides[0].classList.add('active');
+}
 
 function heroGo(next) {
   const total = heroSlides.length;
@@ -127,8 +141,12 @@ function heroStart() {
   heroTimer = setInterval(() => heroGo(heroCurrent + 1), HERO_HOLD_MS);
 }
 
+heroCollect();
 if (heroSlides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   heroStart();
+  const onBreakpointChange = () => { heroReset(); heroStart(); };
+  if (heroMobileMq.addEventListener) heroMobileMq.addEventListener('change', onBreakpointChange);
+  else if (heroMobileMq.addListener) heroMobileMq.addListener(onBreakpointChange);
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       if (heroTimer) clearInterval(heroTimer);

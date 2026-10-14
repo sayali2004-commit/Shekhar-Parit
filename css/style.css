@@ -1116,7 +1116,7 @@
    object-fit: contain — original aspect ratio, never cropped, stretched,
    distorted, or zoomed. House stays fully visible (rooftop to gate). */
 .hero-slide {
-  background: #0a0a1a;
+  background: transparent;
 }
 /* Device-specific slideshows:
    - Phones (<=767px) and portrait tablets (768-1023px upright) show the
@@ -1139,8 +1139,9 @@
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-color: #1a2740;
   filter: blur(28px) brightness(0.68);
-  transform: scale(1.15);
+  transform: scale(1.3);
 }
 @media (max-width: 767px) {
   .hero-slide-fill {

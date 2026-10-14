@@ -19,6 +19,17 @@ setTimeout(hidePreloader, 2500);
 // ===== HEADER SCROLL =====
 const header = document.querySelector('.header');
 
+// Sync --header-height with the actual rendered header so the hero
+// margin-top matches exactly (no gap or overlap between navbar and hero).
+function syncHeaderHeight() {
+  if (header) {
+    document.documentElement.style.setProperty('--header-height', header.offsetHeight + 'px');
+  }
+}
+syncHeaderHeight();
+window.addEventListener('resize', syncHeaderHeight, { passive: true });
+window.addEventListener('load', syncHeaderHeight, { once: true });
+
 function updateHeader() {
   if (window.scrollY > 100) {
     if (header) header.classList.add('scrolled');

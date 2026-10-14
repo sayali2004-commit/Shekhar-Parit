@@ -1111,14 +1111,31 @@
 }
 
 /* ===== HERO IMAGE SLIDESHOW (video removed) ===== */
-/* Full image visible on every screen: no crop, no stretch, no zoom.
-   object-fit: contain preserves original aspect ratio; letterbox
-   bars use the site's deep-navy so the whole house (rooftop to
-   compound wall / entrance gate) stays sharp and centered. */
+/* Full-screen on every device: a blurred copy of the same photo fills
+   the entire hero edge-to-edge, while the sharp photo sits on top with
+   object-fit: contain — original aspect ratio, never cropped, stretched,
+   distorted, or zoomed. House stays fully visible (rooftop to gate). */
 .hero-slide {
   background: #0a0a1a;
 }
+.hero-slide-fill {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(28px) brightness(0.68);
+  transform: scale(1.15);
+}
+@media (max-width: 767px) {
+  .hero-slide-fill {
+    filter: blur(16px) brightness(0.68);
+  }
+}
 .hero-slide-bg {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   max-width: 100%;

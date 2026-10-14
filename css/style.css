@@ -1109,3 +1109,27 @@
     height: 350px;
   }
 }
+
+/* ===== HERO IMAGE SLIDESHOW (video removed) ===== */
+/* Full image visible on every screen: no crop, no stretch, no zoom.
+   object-fit: contain preserves original aspect ratio; letterbox
+   bars use the site's deep-navy so the whole house (rooftop to
+   compound wall / entrance gate) stays sharp and centered. */
+.hero-slide {
+  background: #0a0a1a;
+}
+.hero-slide-bg {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain !important;
+  object-position: center center !important;
+  animation: none !important;
+  filter: none;
+  image-rendering: auto;
+}
+/* Remove leftover video overlay styles from hero (video no longer used) */
+.hero-video-wrap,
+.hero-video {
+  display: none !important;
+}

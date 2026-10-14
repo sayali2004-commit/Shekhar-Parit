@@ -100,12 +100,13 @@ if (hamburger && mobileMenu) {
 }
 
 // ===== HERO CINEMATIC SLIDER =====
-// Slow horizontal slide transitions (~3.2s hold each, ~19s full loop)
-// with a subtle Ken Burns drift on the active frame.
+// Image slideshow (video removed): slow horizontal slide transitions
+// (~5s hold each) so every full house photo stays readable. Images use
+// object-fit: contain — never cropped, stretched, or zoomed.
 const heroSlides = document.querySelectorAll('.hero-slide');
 let heroCurrent = 0;
 let heroTimer = null;
-const HERO_HOLD_MS = 3200;
+const HERO_HOLD_MS = 5000;
 const HERO_EXIT_MS = 1950;
 
 function heroGo(next) {
@@ -138,27 +139,7 @@ if (heroSlides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce
   });
 }
 
-// ===== HERO BACKGROUND VIDEO =====
-const heroVideo = document.querySelector('.hero-video');
-if (heroVideo) {
-  heroVideo.muted = true;
-  heroVideo.loop = true;
-  heroVideo.playsInline = true;
-  const playHero = () => {
-    const p = heroVideo.play();
-    if (p) p.catch(() => {});
-  };
-  playHero();
-  heroVideo.addEventListener('canplay', playHero);
-  heroVideo.addEventListener('ended', playHero);
-  heroVideo.addEventListener('pause', () => {
-    if (!document.hidden) playHero();
-  });
-  document.addEventListener('visibilitychange', () => {
-    if (!heroVideo.paused || document.hidden) return;
-    playHero();
-  });
-}
+// ===== HERO BACKGROUND VIDEO (removed — hero now uses image slideshow) =====
 
 // ===== SCROLL REVEAL =====
 const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');

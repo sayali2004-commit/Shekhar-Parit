@@ -1232,17 +1232,17 @@
 }
 
 /* ===== HERO IMAGE: fill edge-to-edge, no letterbox strip ===== */
-/* contain left a dark blurred band between the navbar and the photo.
-   cover fills the entire hero so the image touches the navbar directly
-   on every screen. Centered position keeps the building in view; no
-   stretching or distortion (aspect ratio preserved by cover). */
+/* cover fills the entire hero so the image touches the navbar directly
+   on every screen. Centered TOP position keeps the roof/signage fully
+   visible (nothing cut at the top); extra crop happens at the bottom
+   only. No stretching or distortion (aspect ratio preserved by cover). */
 .hero-slide-bg {
   object-fit: cover !important;
-  object-position: center center !important;
+  object-position: center top !important;
 }
 @media (max-width: 767px) {
   .hero-slide-bg {
-    object-position: center 40% !important;
+    object-position: center 30% !important;
   }
 }
 

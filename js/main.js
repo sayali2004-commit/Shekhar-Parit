@@ -119,8 +119,8 @@ const heroPortraitMq = window.matchMedia('(max-width: 767px), (min-width: 768px)
 let heroSlides = [];
 let heroCurrent = 0;
 let heroTimer = null;
-const HERO_HOLD_MS = 5000;
-const HERO_EXIT_MS = 1950;
+const HERO_HOLD_MS = 3500;
+const HERO_EXIT_MS = 1200;
 
 function heroCollect() {
   heroSlides = Array.from(document.querySelectorAll(

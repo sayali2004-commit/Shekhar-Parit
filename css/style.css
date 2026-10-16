@@ -1276,3 +1276,25 @@
     font-size: 0.74rem !important;
   }
 }
+
+/* ===== MOBILE: readable company name over hero (transparent header) ===== */
+/* Matches the hamburger's dark translucent treatment so SHARADA and the
+   tagline stay legible against bright sky/photos. Mobile only. */
+@media (max-width: 1023px) {
+  .header.transparent:not(.scrolled) .nav-logo-text {
+    background: rgba(10, 10, 26, 0.5);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    padding: 4px 12px;
+    border-radius: 10px;
+  }
+  .header.transparent:not(.scrolled) .nav-logo-name {
+    color: #fff;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.75);
+  }
+  .header.transparent:not(.scrolled) .nav-logo-tagline {
+    color: #dfc574;
+    font-weight: 700;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.65);
+  }
+}
